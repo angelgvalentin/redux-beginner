@@ -7,9 +7,14 @@ import reportWebVitals from "./reportWebVitals";
 //redux
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
+import userReducer from "./features/user";
+import themeReducer from "./features/theme";
 
 const store = configureStore({
-    reducer: {}, //a reducer is function that takes information about the current state and also takes the action that we want to perform in that state
+    reducer: {
+        user: userReducer,
+        theme: themeReducer,
+    }, //a reducer is function that takes information about the current state and also takes the action that we want to perform in that state
 });
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
